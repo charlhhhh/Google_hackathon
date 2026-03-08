@@ -6,6 +6,8 @@ Built for the **Google Cloud Build With AI Hackathon (NYC 2026)**.
 
 **Live Demo:** [https://voicecraft-nvwmvwq4oa-uc.a.run.app/](https://voicecraft-nvwmvwq4oa-uc.a.run.app/)
 
+**Demo Video:** [Watch the demo](demo.mov)
+
 ## What It Does
 
 Speak naturally. Point your camera when you need visual guidance. VoiceCraft responds with voice while simultaneously generating structured UI panels — step-by-step guides, timers, reminders, navigation boards, and more.
