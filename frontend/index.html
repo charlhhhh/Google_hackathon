@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>VoiceCraft</title>
+    <meta name="theme-color" content="#121211" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-blob atmosphere-blob--warm"></div>
+      <div class="atmosphere-blob atmosphere-blob--cool"></div>
+    </div>
+    <main class="app-shell" id="app-shell">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">VoiceCraft</p>
+          <h1>AI that coaches in real time.</h1>
+          <p class="hero-copy">
+            Speak naturally, turn on the camera when you need it, and let VoiceCraft build a live task board while it guides you.
+          </p>
+          <p class="hero-note">Microphone starts first. Camera is optional and can be enabled later.</p>
+        </div>
+        <button id="start-button" class="start-button">Start Voice</button>
+      </section>
+
+      <section class="stage-panel">
+        <div class="stage-topline">
+          <div class="status-pill">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">Ready when you are.</span>
+          </div>
+          <span class="model-pill">Gemini Live + ADK</span>
+        </div>
+
+        <div class="camera-card">
+          <video
+            id="camera-preview"
+            autoplay
+            muted
+            playsinline
+            class="camera-preview"
+          ></video>
+          <div class="camera-fallback" id="camera-fallback">
+            <span class="camera-fallback-icon" aria-hidden="true">📷</span>
+            Camera is off. Turn it on when you want live visual coaching.
+          </div>
+        </div>
+
+        <section id="cards-canvas" class="cards-canvas" aria-live="polite"></section>
+        <section id="transcript-strip" class="transcript-strip" aria-live="polite"></section>
+      </section>
+
+      <section class="control-panel">
+        <div class="control-row">
+          <button id="camera-button" class="camera-toggle" type="button">
+            <span class="camera-toggle-dot" id="camera-toggle-dot"></span>
+            <span id="camera-label">Enable Camera</span>
+          </button>
+
+          <button id="mic-button" class="mic-button" type="button">
+            <span class="mic-ring"></span>
+            <span class="mic-core">●</span>
+            <span id="mic-label" class="mic-label">Start Listening</span>
+          </button>
+        </div>
+
+        <div class="skill-bar">
+          <button
+            class="skill-chip"
+            data-prompt="I am about to show you a medicine bottle or box. Identify the key details, explain the important points briefly, and build a medication task board with dosage, warnings, and next steps. Create a reminder only if it helps."
+          >
+            Medication Help
+          </button>
+          <button
+            class="skill-chip"
+            data-prompt="Look at the ingredients I show you, recommend one simple dish, and build a cooking task board with ingredients, steps, and any useful timers."
+          >
+            Cook With Me
+          </button>
+          <button
+            class="skill-chip"
+            data-prompt="Read the text I show you, translate it into clear English, and build a translation board with the key phrases on screen."
+          >
+            Translate This
+          </button>
+          <button
+            class="skill-chip"
+            data-prompt="Help me complete a device setup task step by step. Start with a clear task board, then update it as I make progress."
+          >
+            Device Setup
+          </button>
+          <button
+            class="skill-chip"
+            data-prompt="Help me navigate somewhere step by step. Build a guided task board with a clear current step, key facts, and a warning if needed."
+          >
+            Navigation
+          </button>
+          <button
+            class="skill-chip"
+            data-prompt="Help me create a reminder and show the reminder clearly on screen."
+          >
+            Reminders
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/assets/app.js"></script>
+  </body>
+</html>
